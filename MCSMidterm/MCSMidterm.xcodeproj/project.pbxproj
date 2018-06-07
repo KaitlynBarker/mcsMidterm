@@ -14,6 +14,10 @@
 		71A5EA4E20C95CF100F0E7FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71A5EA4C20C95CF100F0E7FE /* LaunchScreen.storyboard */; };
 		71A5EA5920C95CF100F0E7FE /* MCSMidtermTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5EA5820C95CF100F0E7FE /* MCSMidtermTests.swift */; };
 		71A5EA6420C95CF100F0E7FE /* MCSMidtermUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5EA6320C95CF100F0E7FE /* MCSMidtermUITests.swift */; };
+		71A5EA7C20C96D3A00F0E7FE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5EA7B20C96D3A00F0E7FE /* TabBarController.swift */; };
+		71A5EA7E20C96D7000F0E7FE /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5EA7D20C96D7000F0E7FE /* UIColorExt.swift */; };
+		71A5EA8020C9726F00F0E7FE /* MyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5EA7F20C9726F00F0E7FE /* MyListTableViewController.swift */; };
+		71A5EA8220C9737600F0E7FE /* ItemsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5EA8120C9737600F0E7FE /* ItemsCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		71A5EA5F20C95CF100F0E7FE /* MCSMidtermUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MCSMidtermUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A5EA6320C95CF100F0E7FE /* MCSMidtermUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCSMidtermUITests.swift; sourceTree = "<group>"; };
 		71A5EA6520C95CF100F0E7FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71A5EA7B20C96D3A00F0E7FE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		71A5EA7D20C96D7000F0E7FE /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
+		71A5EA7F20C9726F00F0E7FE /* MyListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListTableViewController.swift; sourceTree = "<group>"; };
+		71A5EA8120C9737600F0E7FE /* ItemsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +149,8 @@
 		71A5EA7520C95F3E00F0E7FE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				71A5EA7F20C9726F00F0E7FE /* MyListTableViewController.swift */,
+				71A5EA8120C9737600F0E7FE /* ItemsCollectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -177,6 +187,8 @@
 		71A5EA7A20C95F5800F0E7FE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				71A5EA7B20C96D3A00F0E7FE /* TabBarController.swift */,
+				71A5EA7D20C96D7000F0E7FE /* UIColorExt.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -312,6 +324,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71A5EA7C20C96D3A00F0E7FE /* TabBarController.swift in Sources */,
+				71A5EA8220C9737600F0E7FE /* ItemsCollectionViewController.swift in Sources */,
+				71A5EA7E20C96D7000F0E7FE /* UIColorExt.swift in Sources */,
+				71A5EA8020C9726F00F0E7FE /* MyListTableViewController.swift in Sources */,
 				71A5EA4920C95CF000F0E7FE /* MCSMidterm.xcdatamodeld in Sources */,
 				71A5EA4120C95CF000F0E7FE /* AppDelegate.swift in Sources */,
 			);
