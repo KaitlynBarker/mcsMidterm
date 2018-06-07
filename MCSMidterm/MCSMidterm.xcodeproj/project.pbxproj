@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		71A5EA4120C95CF000F0E7FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5EA4020C95CF000F0E7FE /* AppDelegate.swift */; };
-		71A5EA4320C95CF000F0E7FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5EA4220C95CF000F0E7FE /* ViewController.swift */; };
 		71A5EA4620C95CF000F0E7FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71A5EA4420C95CF000F0E7FE /* Main.storyboard */; };
 		71A5EA4920C95CF000F0E7FE /* MCSMidterm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71A5EA4720C95CF000F0E7FE /* MCSMidterm.xcdatamodeld */; };
 		71A5EA4B20C95CF100F0E7FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A5EA4A20C95CF100F0E7FE /* Assets.xcassets */; };
@@ -37,7 +36,6 @@
 /* Begin PBXFileReference section */
 		71A5EA3D20C95CF000F0E7FE /* MCSMidterm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCSMidterm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A5EA4020C95CF000F0E7FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		71A5EA4220C95CF000F0E7FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		71A5EA4520C95CF000F0E7FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		71A5EA4820C95CF000F0E7FE /* MCSMidterm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MCSMidterm.xcdatamodel; sourceTree = "<group>"; };
 		71A5EA4A20C95CF100F0E7FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,13 +97,15 @@
 		71A5EA3F20C95CF000F0E7FE /* MCSMidterm */ = {
 			isa = PBXGroup;
 			children = (
-				71A5EA4020C95CF000F0E7FE /* AppDelegate.swift */,
-				71A5EA4220C95CF000F0E7FE /* ViewController.swift */,
+				71A5EA7A20C95F5800F0E7FE /* Helpers */,
+				71A5EA7920C95F5200F0E7FE /* CoreData */,
+				71A5EA7820C95F4E00F0E7FE /* Models */,
+				71A5EA7720C95F4800F0E7FE /* ModelControllers */,
+				71A5EA7620C95F4400F0E7FE /* Views */,
+				71A5EA7520C95F3E00F0E7FE /* ViewControllers */,
+				71A5EA7420C95D8100F0E7FE /* Resources */,
 				71A5EA4420C95CF000F0E7FE /* Main.storyboard */,
-				71A5EA4A20C95CF100F0E7FE /* Assets.xcassets */,
-				71A5EA4C20C95CF100F0E7FE /* LaunchScreen.storyboard */,
 				71A5EA4F20C95CF100F0E7FE /* Info.plist */,
-				71A5EA4720C95CF000F0E7FE /* MCSMidterm.xcdatamodeld */,
 			);
 			path = MCSMidterm;
 			sourceTree = "<group>";
@@ -126,6 +126,59 @@
 				71A5EA6520C95CF100F0E7FE /* Info.plist */,
 			);
 			path = MCSMidtermUITests;
+			sourceTree = "<group>";
+		};
+		71A5EA7420C95D8100F0E7FE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				71A5EA4020C95CF000F0E7FE /* AppDelegate.swift */,
+				71A5EA4C20C95CF100F0E7FE /* LaunchScreen.storyboard */,
+				71A5EA4A20C95CF100F0E7FE /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		71A5EA7520C95F3E00F0E7FE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		71A5EA7620C95F4400F0E7FE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		71A5EA7720C95F4800F0E7FE /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		71A5EA7820C95F4E00F0E7FE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		71A5EA7920C95F5200F0E7FE /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				71A5EA4720C95CF000F0E7FE /* MCSMidterm.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		71A5EA7A20C95F5800F0E7FE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +312,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71A5EA4320C95CF000F0E7FE /* ViewController.swift in Sources */,
 				71A5EA4920C95CF000F0E7FE /* MCSMidterm.xcdatamodeld in Sources */,
 				71A5EA4120C95CF000F0E7FE /* AppDelegate.swift in Sources */,
 			);
