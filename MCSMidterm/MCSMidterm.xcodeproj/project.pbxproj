@@ -19,6 +19,10 @@
 		71A5EA8020C9726F00F0E7FE /* MyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5EA7F20C9726F00F0E7FE /* MyListTableViewController.swift */; };
 		71A5EA8220C9737600F0E7FE /* ItemsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5EA8120C9737600F0E7FE /* ItemsCollectionViewController.swift */; };
 		71A5EA8420C97F1E00F0E7FE /* ProductCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5EA8320C97F1E00F0E7FE /* ProductCollectionViewController.swift */; };
+		71A5EA8A20C98EB000F0E7FE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5EA8920C98EB000F0E7FE /* NetworkManager.swift */; };
+		71A5EA8C20C9A59F00F0E7FE /* Product+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5EA8B20C9A59F00F0E7FE /* Product+Convenience.swift */; };
+		71A5EA8E20C9A5AB00F0E7FE /* Category+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5EA8D20C9A5AB00F0E7FE /* Category+Convenience.swift */; };
+		71A5EA9020C9A60D00F0E7FE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5EA8F20C9A60D00F0E7FE /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		71A5EA7F20C9726F00F0E7FE /* MyListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListTableViewController.swift; sourceTree = "<group>"; };
 		71A5EA8120C9737600F0E7FE /* ItemsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewController.swift; sourceTree = "<group>"; };
 		71A5EA8320C97F1E00F0E7FE /* ProductCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewController.swift; sourceTree = "<group>"; };
+		71A5EA8920C98EB000F0E7FE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		71A5EA8B20C9A59F00F0E7FE /* Product+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+Convenience.swift"; sourceTree = "<group>"; };
+		71A5EA8D20C9A5AB00F0E7FE /* Category+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+Convenience.swift"; sourceTree = "<group>"; };
+		71A5EA8F20C9A60D00F0E7FE /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +183,8 @@
 		71A5EA7820C95F4E00F0E7FE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				71A5EA8B20C9A59F00F0E7FE /* Product+Convenience.swift */,
+				71A5EA8D20C9A5AB00F0E7FE /* Category+Convenience.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				71A5EA4720C95CF000F0E7FE /* MCSMidterm.xcdatamodeld */,
+				71A5EA8F20C9A60D00F0E7FE /* CoreDataStack.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -192,6 +203,7 @@
 			children = (
 				71A5EA7B20C96D3A00F0E7FE /* TabBarController.swift */,
 				71A5EA7D20C96D7000F0E7FE /* UIColorExt.swift */,
+				71A5EA8920C98EB000F0E7FE /* NetworkManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -331,6 +343,10 @@
 				71A5EA8420C97F1E00F0E7FE /* ProductCollectionViewController.swift in Sources */,
 				71A5EA8220C9737600F0E7FE /* ItemsCollectionViewController.swift in Sources */,
 				71A5EA7E20C96D7000F0E7FE /* UIColorExt.swift in Sources */,
+				71A5EA8A20C98EB000F0E7FE /* NetworkManager.swift in Sources */,
+				71A5EA8E20C9A5AB00F0E7FE /* Category+Convenience.swift in Sources */,
+				71A5EA9020C9A60D00F0E7FE /* CoreDataStack.swift in Sources */,
+				71A5EA8C20C9A59F00F0E7FE /* Product+Convenience.swift in Sources */,
 				71A5EA8020C9726F00F0E7FE /* MyListTableViewController.swift in Sources */,
 				71A5EA4920C95CF000F0E7FE /* MCSMidterm.xcdatamodeld in Sources */,
 				71A5EA4120C95CF000F0E7FE /* AppDelegate.swift in Sources */,
