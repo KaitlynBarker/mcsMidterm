@@ -1,5 +1,5 @@
 //
-//  ItemsCollectionViewController.swift
+//  ProductCollectionViewController.swift
 //  MCSMidterm
 //
 //  Created by Kaitlyn Barker on 6/7/18.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-private let reuseIdentifier = "categoryCell"
+private let reuseIdentifier = "categoryProductCell"
 
-class ItemsCollectionViewController: UICollectionViewController {
+class ProductCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,14 +19,6 @@ class ItemsCollectionViewController: UICollectionViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toProductListVC" {
-            
-        }
     }
 
     // MARK: UICollectionViewDataSource

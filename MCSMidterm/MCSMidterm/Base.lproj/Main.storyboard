@@ -88,6 +88,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </view>
+                                <connections>
+                                    <segue destination="gxl-uv-bhS" kind="show" identifier="toProductListVC" id="dW8-jj-NzW"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -103,6 +106,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YBu-CK-2pY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2878" y="681"/>
+        </scene>
+        <!--Product Collection View Controller-->
+        <scene sceneID="Mvr-wy-KbT">
+            <objects>
+                <collectionViewController id="gxl-uv-bhS" customClass="ProductCollectionViewController" customModule="MCSMidterm" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="SzQ-BF-OBC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QJ9-tR-4ZE">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="categoryProductCell" id="pQu-Dw-tj2">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="gxl-uv-bhS" id="QcT-c7-P3w"/>
+                            <outlet property="delegate" destination="gxl-uv-bhS" id="SZj-u5-EBC"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="8Lv-ds-7Fu">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wd7-Rf-O8m"/>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="boL-G1-gnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3678" y="685"/>
         </scene>
         <!--Custom Tab Bar Controller-->
         <scene sceneID="fXa-iv-AzJ">
