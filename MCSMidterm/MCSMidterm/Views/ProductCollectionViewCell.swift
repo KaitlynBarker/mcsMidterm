@@ -19,8 +19,10 @@ class ProductCollectionViewCell: UICollectionViewCell {
     // MARK: - Actions
     
     @IBAction func isSelectedButtonTapped(_ sender: UIButton) {
-        
+        delegate?.productWasUpdated(cell: self)
     }
+    
+    weak var delegate: ProductCollectionViewCellDelegate?
     
     var product: Product? {
         didSet {
@@ -34,4 +36,8 @@ class ProductCollectionViewCell: UICollectionViewCell {
         self.productImageView.image = image
         self.nameLabel.text = name
     }
+}
+
+protocol ProductCollectionViewCellDelegate: class {
+    func productWasUpdated(cell: ProductCollectionViewCell)
 }
