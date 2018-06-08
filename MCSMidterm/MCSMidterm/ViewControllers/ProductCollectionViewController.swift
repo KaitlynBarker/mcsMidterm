@@ -14,20 +14,6 @@ class ProductCollectionViewController: UICollectionViewController, ProductCollec
     
     var category: Category?
     var products: NSSet = []
-    
-    var selectedProducts: [Product] {
-        return products.filter({ (product) -> Bool in
-            guard let product = product as? Product else { return false }
-            return product.isSelected == true
-        }) as! [Product]
-    }
-    
-    var purchasedProducts: [Product] {
-        return products.filter({ (product) -> Bool in
-            guard let product = product as? Product else { return false }
-            return product.isPurchased == true
-        }) as! [Product]
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

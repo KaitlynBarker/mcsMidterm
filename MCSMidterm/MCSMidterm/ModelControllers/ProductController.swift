@@ -26,6 +26,12 @@ class ProductController {
         return []
     }
     
+    var selectedProducts: [Product] {
+        return self.products.filter({ (product) -> Bool in
+            return product.isSelected == true
+        })
+    }
+    
     func isSelectedToggle(product: Product) {
         product.isSelected = !product.isSelected
         self.save()

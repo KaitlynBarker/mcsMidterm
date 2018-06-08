@@ -10,7 +10,7 @@ import UIKit
 
 class MyListTableViewController: UITableViewController, ListTableViewCellDelegate {
     
-    let products = ProductController.shared.products
+    var products = ProductController.shared.selectedProducts
     var categories: [Category] = []
 
     override func viewDidLoad() {
@@ -21,6 +21,10 @@ class MyListTableViewController: UITableViewController, ListTableViewCellDelegat
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,15 +52,17 @@ class MyListTableViewController: UITableViewController, ListTableViewCellDelegat
 
     // MARK: - Table view data source
 
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return self.categories.count
-//    }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return self.categories.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let name = self.categories[section].name else { return "" }
+        return name
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let selectedProducts = self.products.filter { (product) -> Bool in
-            return product.isSelected == true
-        }
-        return selectedProducts.count
+        return self.categories[section].products?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,7 +70,7 @@ class MyListTableViewController: UITableViewController, ListTableViewCellDelegat
 
         cell.delegate = self
         
-        let product = ProductController.shared.products[indexPath.row]
+        let product = self.products[indexPath.row]
         
         cell.product = product
 
@@ -76,6 +82,7 @@ class MyListTableViewController: UITableViewController, ListTableViewCellDelegat
         if editingStyle == .delete {
             let product = self.products[indexPath.row]
             ProductController.shared.isSelectedToggle(product: product)
+            products.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
