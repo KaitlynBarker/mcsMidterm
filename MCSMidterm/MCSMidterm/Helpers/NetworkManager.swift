@@ -192,16 +192,19 @@ class NetworkManager {
         
         // MARK: - Drinks
         
-        /*
-         Coffee
-         Energy Drinks
-         Horchata
-         Juice
-         Soda
-         Smoothie
-         Sports Drinks
-         Tea
-        */
+        let coffee = Product(name: "Coffee", image: #imageLiteral(resourceName: "coffee"))
+        let energyDrinks = Product(name: "Energy Drinks", image: #imageLiteral(resourceName: "energyDrink"))
+        let juice = Product(name: "Juice", image: #imageLiteral(resourceName: "juice"))
+        let soda = Product(name: "Soda", image: #imageLiteral(resourceName: "soda"))
+        let smoothie = Product(name: "Smoothie", image: #imageLiteral(resourceName: "smoothie"))
+        let tea = Product(name: "Tea", image: #imageLiteral(resourceName: "tea"))
+        
+        drinks.addToProducts(coffee)
+        drinks.addToProducts(energyDrinks)
+        drinks.addToProducts(juice)
+        drinks.addToProducts(soda)
+        drinks.addToProducts(smoothie)
+        drinks.addToProducts(tea)
         
         // MARK: - Baby
         
