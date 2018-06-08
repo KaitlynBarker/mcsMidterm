@@ -71,7 +71,7 @@ class MyListTableViewController: UITableViewController, ListTableViewCellDelegat
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let product = ProductController.shared.products[indexPath.row]
+            let product = self.products[indexPath.row]
             ProductController.shared.isSelectedToggle(product: product)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
@@ -81,7 +81,7 @@ class MyListTableViewController: UITableViewController, ListTableViewCellDelegat
     
     func listProductWasUpdated(cell: ListTableViewCell) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
-        let product = ProductController.shared.products[indexPath.row]
+        let product = self.products[indexPath.row]
         
         ProductController.shared.isPurchasedToggle(product: product)
         cell.updateViews()
