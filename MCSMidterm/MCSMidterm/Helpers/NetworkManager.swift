@@ -32,7 +32,6 @@ class NetworkManager {
         let sweets = Category(name: "Sweets", image: #imageLiteral(resourceName: "sweets"))
         let snacks = Category(name: "Snacks", image: #imageLiteral(resourceName: "snacks"))
         let drinks = Category(name: "Drinks", image: #imageLiteral(resourceName: "drinks"))
-        let baby = Category(name: "Baby", image: #imageLiteral(resourceName: "baby"))
         let hygiene = Category(name: "Hygeine", image: #imageLiteral(resourceName: "hygeine"))
         let pharmacy = Category(name: "Pharmacy", image: #imageLiteral(resourceName: "pharmacy"))
         let home = Category(name: "Home", image: #imageLiteral(resourceName: "home"))
@@ -47,7 +46,6 @@ class NetworkManager {
         categoryList.append(sweets)
         categoryList.append(snacks)
         categoryList.append(drinks)
-        categoryList.append(baby)
         categoryList.append(hygiene)
         categoryList.append(pharmacy)
         categoryList.append(home)
@@ -206,48 +204,40 @@ class NetworkManager {
         drinks.addToProducts(smoothie)
         drinks.addToProducts(tea)
         
-        // MARK: - Baby
-        
-        /*
-         Baby Food
-         Clothing
-         Diapers
-         Formula
-         Miscellaneous
-        */
         
         // MARK: - Hygiene
         
-        /*
-         Body Wash
-         Conditioner
-         Deodorant
-         Mouthwash
-         Shampoo
-         Soap
-         Toothbrush
-         Toothpaste
-        */
+        let deodorant = Product(name: "Deodorant", image: #imageLiteral(resourceName: "deodorant"))
+        let mouthwash = Product(name: "Mouthwash", image: #imageLiteral(resourceName: "mouthwash"))
+        let shampooConditioner = Product(name: "Shampoo/Conditioner", image: #imageLiteral(resourceName: "shampoo-conditioner"))
+        let soap = Product(name: "Soap", image: #imageLiteral(resourceName: "soap"))
+        let oralCare = Product(name: "Toothbrush/Toothpaste", image: #imageLiteral(resourceName: "oralCare"))
+        
+        hygiene.addToProducts(deodorant)
+        hygiene.addToProducts(mouthwash)
+        hygiene.addToProducts(shampooConditioner)
+        hygiene.addToProducts(soap)
+        hygiene.addToProducts(oralCare)
         
         // MARK: - Pharmacy
         
-        /*
-         Bandaids
-         Medication
-         Vitamins
-        */
+        let bandaids = Product(name: "Band-Aids", image: #imageLiteral(resourceName: "band-aid"))
+        let medication = Product(name: "Medication", image: #imageLiteral(resourceName: "pharmacy"))
+        
+        pharmacy.addToProducts(bandaids)
+        pharmacy.addToProducts(medication)
         
         // MARK: - Home
         
-        /*
-         Broom
-         Dishes
-         Dishwasher Soap
-         Dryer Sheets
-         Laundry Detergent
-         Mop
-         Vacuum
-        */
+        let broomMop = Product(name: "Broom/Mop", image: #imageLiteral(resourceName: "broom-mop"))
+        let dishwasherSoap = Product(name: "Dish Soap", image: #imageLiteral(resourceName: "dishSoap"))
+        let laundrySupplies = Product(name: "Laundry Supplies", image: #imageLiteral(resourceName: "laundrySupplies"))
+        let vacuum = Product(name: "Vacuum", image: #imageLiteral(resourceName: "vacuum"))
+        
+        home.addToProducts(broomMop)
+        home.addToProducts(dishwasherSoap)
+        home.addToProducts(laundrySupplies)
+        home.addToProducts(vacuum)
         
         completion(categoryList)
     }

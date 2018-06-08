@@ -48,12 +48,15 @@ class MyListTableViewController: UITableViewController, ListTableViewCellDelegat
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return self.categories.count
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        return self.categories.count
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.categories[section].products?.count ?? 0
+        let selectedProducts = self.products.filter { (product) -> Bool in
+            return product.isSelected == true
+        }
+        return selectedProducts.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
