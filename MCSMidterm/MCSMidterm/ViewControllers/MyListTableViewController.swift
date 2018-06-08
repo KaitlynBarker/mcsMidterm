@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyListTableViewController: UITableViewController {
+class MyListTableViewController: UITableViewController, ListTableViewCellDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,11 @@ class MyListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath) as? ListTableViewCell else { return UITableViewCell() }
 
+        cell.delegate = self
         
+        let product = ProductController.shared.products[indexPath.row]
+        
+        cell.product = product
 
         return cell
     }
@@ -40,10 +44,19 @@ class MyListTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            let product = ProductController.shared.products[indexPath.row]
+            ProductController.shared.isSelectedToggle(product: product)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
+    }
+    
+    // MARK: - ListTableViewCellDelegate
+    
+    func listProductWasUpdated(cell: ListTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        let product = ProductController.shared.products[indexPath.row]
+        
+        ProductController.shared.isPurchasedToggle(product: product)
+        cell.updateViews()
     }
 }

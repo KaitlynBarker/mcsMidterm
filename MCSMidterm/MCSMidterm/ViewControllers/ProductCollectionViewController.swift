@@ -14,6 +14,20 @@ class ProductCollectionViewController: UICollectionViewController, ProductCollec
     
     var category: Category?
     var products: NSSet = []
+    
+    var selectedProducts: [Product] {
+        return products.filter({ (product) -> Bool in
+            guard let product = product as? Product else { return false }
+            return product.isSelected == true
+        }) as! [Product]
+    }
+    
+    var purchasedProducts: [Product] {
+        return products.filter({ (product) -> Bool in
+            guard let product = product as? Product else { return false }
+            return product.isPurchased == true
+        }) as! [Product]
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +35,10 @@ class ProductCollectionViewController: UICollectionViewController, ProductCollec
         guard let productSet = self.category?.products else { return }
         
         self.products = productSet
+        
+        DispatchQueue.main.async {
+            self.collectionView?.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,33 +61,6 @@ class ProductCollectionViewController: UICollectionViewController, ProductCollec
     
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
     
     // MARK: - ProductCollectionCellDelegate
     

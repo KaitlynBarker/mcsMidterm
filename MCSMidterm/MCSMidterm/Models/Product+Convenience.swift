@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 
 extension Product {
-    convenience init(name: String, isPurchased: Bool, isSelected: Bool, image: UIImage, context: NSManagedObjectContext = CoreDataStack.context) {
+    convenience init(name: String, isPurchased: Bool = false, isSelected: Bool = false, image: UIImage, context: NSManagedObjectContext = CoreDataStack.context) {
         
         self.init(context: context)
         self.name = name

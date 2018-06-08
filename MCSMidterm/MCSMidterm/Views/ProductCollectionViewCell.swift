@@ -35,6 +35,12 @@ class ProductCollectionViewCell: UICollectionViewCell {
         
         self.productImageView.image = image
         self.nameLabel.text = name
+        
+        if product.isSelected {
+            self.isHighlighted = true
+        } else {
+            self.isHighlighted = false
+        }
     }
 }
 

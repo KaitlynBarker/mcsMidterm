@@ -54,20 +54,20 @@ class NetworkManager {
         
         // MARK: - Fruit
         
-        let apple = Product(name: "Apple", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "apples"))
-        let banana = Product(name: "Banana", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "banana"))
-        let blueberries = Product(name: "Blueberries", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "blueberries"))
-        let blackberries = Product(name: "Blackberries", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "blackberries"))
-        let cherries = Product(name: "Cherries", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "cherries"))
-        let dragonFruit = Product(name: "Dragon Fruit", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "dragonfruit"))
-        let grapes = Product(name: "Grapes", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "grapes"))
-        let kiwis = Product(name: "Kiwis", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "kiwi"))
-        let lemons = Product(name: "Lemons", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "lemons"))
-        let limes = Product(name: "Limes", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "limes"))
-        let oranges = Product(name: "Oranges", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "oranges"))
-        let peaches = Product(name: "Peaches", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "peaches"))
-        let plums = Product(name: "Plums", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "plums"))
-        let strawberries = Product(name: "Strawberries", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "strawberries"))
+        let apple = Product(name: "Apple", image: #imageLiteral(resourceName: "apples"))
+        let banana = Product(name: "Banana", image: #imageLiteral(resourceName: "banana"))
+        let blueberries = Product(name: "Blueberries", image: #imageLiteral(resourceName: "blueberries"))
+        let blackberries = Product(name: "Blackberries", image: #imageLiteral(resourceName: "blackberries"))
+        let cherries = Product(name: "Cherries", image: #imageLiteral(resourceName: "cherries"))
+        let dragonFruit = Product(name: "Dragon Fruit", image: #imageLiteral(resourceName: "dragonfruit"))
+        let grapes = Product(name: "Grapes", image: #imageLiteral(resourceName: "grapes"))
+        let kiwis = Product(name: "Kiwis", image: #imageLiteral(resourceName: "kiwi"))
+        let lemons = Product(name: "Lemons", image: #imageLiteral(resourceName: "lemons"))
+        let limes = Product(name: "Limes", image: #imageLiteral(resourceName: "limes"))
+        let oranges = Product(name: "Oranges", image: #imageLiteral(resourceName: "oranges"))
+        let peaches = Product(name: "Peaches", image: #imageLiteral(resourceName: "peaches"))
+        let plums = Product(name: "Plums", image: #imageLiteral(resourceName: "plums"))
+        let strawberries = Product(name: "Strawberries", image: #imageLiteral(resourceName: "strawberries"))
         
         fruit.addToProducts(apple)
         fruit.addToProducts(banana)
@@ -86,15 +86,15 @@ class NetworkManager {
         
         // MARK: - Vegetables
         
-        let bellPepper = Product(name: "Bell Peppers", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "bellPepper"))
-        let brusselsSprouts = Product(name: "Brussels Sprouts", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "brusselsSprouts"))
-        let broccoli = Product(name: "Broccoli", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "broccoli"))
-        let carrots = Product(name: "Carrots", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "carrots"))
-        let cucumber = Product(name: "Cucumber", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "cucumber"))
-        let onions = Product(name: "Onions", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "onions"))
-        let potatoes = Product(name: "Potatoes", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "potatoes"))
-        let spinach = Product(name: "Spinach", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "spinach"))
-        let tomatoes = Product(name: "Tomatoes", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "tomatoes"))
+        let bellPepper = Product(name: "Bell Peppers", image: #imageLiteral(resourceName: "bellPepper"))
+        let brusselsSprouts = Product(name: "Brussels Sprouts", image: #imageLiteral(resourceName: "brusselsSprouts"))
+        let broccoli = Product(name: "Broccoli", image: #imageLiteral(resourceName: "broccoli"))
+        let carrots = Product(name: "Carrots", image: #imageLiteral(resourceName: "carrots"))
+        let cucumber = Product(name: "Cucumber", image: #imageLiteral(resourceName: "cucumber"))
+        let onions = Product(name: "Onions", image: #imageLiteral(resourceName: "onions"))
+        let potatoes = Product(name: "Potatoes", image: #imageLiteral(resourceName: "potatoes"))
+        let spinach = Product(name: "Spinach", image: #imageLiteral(resourceName: "spinach"))
+        let tomatoes = Product(name: "Tomatoes", image: #imageLiteral(resourceName: "tomatoes"))
         
         vegetables.addToProducts(bellPepper)
         vegetables.addToProducts(brusselsSprouts)
@@ -108,10 +108,10 @@ class NetworkManager {
         
         // MARK: - Meat
         
-        let beef = Product(name: "Beef", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "beef"))
-        let chicken = Product(name: "Chicken", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "chicken"))
-        let lamb = Product(name: "Lamb", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "lamb"))
-        let pork = Product(name: "Pork", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "pork"))
+        let beef = Product(name: "Beef", image: #imageLiteral(resourceName: "beef"))
+        let chicken = Product(name: "Chicken", image: #imageLiteral(resourceName: "chicken"))
+        let lamb = Product(name: "Lamb", image: #imageLiteral(resourceName: "lamb"))
+        let pork = Product(name: "Pork", image: #imageLiteral(resourceName: "pork"))
         
         meats.addToProducts(beef)
         meats.addToProducts(chicken)
@@ -120,10 +120,10 @@ class NetworkManager {
         
         // MARK: - Seafood
         
-        let crab = Product(name: "Crab", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "crab"))
-        let lobster = Product(name: "Lobster", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "lobster"))
-        let salmon = Product(name: "Salmon", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "salmon"))
-        let shrimp = Product(name: "Shrimp", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "shrimp"))
+        let crab = Product(name: "Crab", image: #imageLiteral(resourceName: "crab"))
+        let lobster = Product(name: "Lobster", image: #imageLiteral(resourceName: "lobster"))
+        let salmon = Product(name: "Salmon", image: #imageLiteral(resourceName: "salmon"))
+        let shrimp = Product(name: "Shrimp", image: #imageLiteral(resourceName: "shrimp"))
         
         seafood.addToProducts(crab)
         seafood.addToProducts(lobster)
@@ -132,9 +132,9 @@ class NetworkManager {
         
         // MARK: - Dairy
         
-        let cheese = Product(name: "Cheese", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "cheese"))
-        let milk = Product(name: "Milk", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "dairy"))
-        let yogurt = Product(name: "Yogurt", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "yogurt"))
+        let cheese = Product(name: "Cheese", image: #imageLiteral(resourceName: "cheese"))
+        let milk = Product(name: "Milk", image: #imageLiteral(resourceName: "dairy"))
+        let yogurt = Product(name: "Yogurt", image: #imageLiteral(resourceName: "yogurt"))
         
         dairy.addToProducts(cheese)
         dairy.addToProducts(milk)
@@ -142,13 +142,13 @@ class NetworkManager {
         
         // MARK: - Bakery
         
-        let bagels = Product(name: "Bagels", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "bagel"))
-        let bread = Product(name: "Bread", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "bread"))
-        let brownies = Product(name: "Brownies", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "brownie"))
-        let cake = Product(name: "Cake", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "cake"))
-        let cookies = Product(name: "Cookies", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "cookies"))
-        let cupcakes = Product(name: "Cupcakes", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "cupcakes"))
-        let muffins = Product(name: "Muffins", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "muffins"))
+        let bagels = Product(name: "Bagels", image: #imageLiteral(resourceName: "bagel"))
+        let bread = Product(name: "Bread", image: #imageLiteral(resourceName: "bread"))
+        let brownies = Product(name: "Brownies", image: #imageLiteral(resourceName: "brownie"))
+        let cake = Product(name: "Cake", image: #imageLiteral(resourceName: "cake"))
+        let cookies = Product(name: "Cookies", image: #imageLiteral(resourceName: "cookies"))
+        let cupcakes = Product(name: "Cupcakes", image: #imageLiteral(resourceName: "cupcakes"))
+        let muffins = Product(name: "Muffins", image: #imageLiteral(resourceName: "muffins"))
         
         bakery.addToProducts(bagels)
         bakery.addToProducts(bread)
@@ -160,18 +160,18 @@ class NetworkManager {
         
         // MARK: - Frozen
         
-        let iceCream = Product(name: "Ice Cream", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "iceCream"))
-        let other = Product(name: "Other", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "frozen"))
+        let iceCream = Product(name: "Ice Cream", image: #imageLiteral(resourceName: "iceCream"))
+        let other = Product(name: "Other", image: #imageLiteral(resourceName: "frozen"))
         
         frozen.addToProducts(iceCream)
         frozen.addToProducts(other)
         
         // MARK: - Sweets
         
-        let candy = Product(name: "Candy", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "sweets"))
-        let chocolate = Product(name: "Chocolate", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "chocolate"))
-        let doughnut = Product(name: "Doughnut", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "doughnut"))
-        let marzipan = Product(name: "Marzipan", isPurchased: false, isSelected: false, image: #imageLiteral(resourceName: "marzipan"))
+        let candy = Product(name: "Candy", image: #imageLiteral(resourceName: "sweets"))
+        let chocolate = Product(name: "Chocolate", image: #imageLiteral(resourceName: "chocolate"))
+        let doughnut = Product(name: "Doughnut", image: #imageLiteral(resourceName: "doughnut"))
+        let marzipan = Product(name: "Marzipan", image: #imageLiteral(resourceName: "marzipan"))
         
         sweets.addToProducts(candy)
         sweets.addToProducts(chocolate)
@@ -180,14 +180,15 @@ class NetworkManager {
         
         // MARK: - Snacks
         
-        /*
-         Chips
-         Crackers
-         Hummus
-         Snack Mix
-         String Cheese
-         Yogurt
-        */
+        let chips = Product(name: "Chips", image: #imageLiteral(resourceName: "snacks"))
+        let crackers = Product(name: "Crackers", image: #imageLiteral(resourceName: "crackers"))
+        let hummus = Product(name: "Hummus", image: #imageLiteral(resourceName: "hummus"))
+        let snackMix = Product(name: "Snack Mix", image: #imageLiteral(resourceName: "snackMix"))
+        
+        snacks.addToProducts(chips)
+        snacks.addToProducts(crackers)
+        snacks.addToProducts(hummus)
+        snacks.addToProducts(snackMix)
         
         // MARK: - Drinks
         
