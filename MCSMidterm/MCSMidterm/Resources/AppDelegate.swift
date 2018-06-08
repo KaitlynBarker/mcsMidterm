@@ -22,12 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont.systemFont(ofSize: UIFont.smallSystemFontSize)]
         navBarAppearance.backgroundColor = UIColor.limeGreen
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let customTabBar = storyboard.instantiateViewController(withIdentifier: "CustomTabBar") as? CustomTabBarController else { return false }
-        
-        window?.rootViewController = customTabBar
-        window?.makeKeyAndVisible()
-        
         return true
     }
     
