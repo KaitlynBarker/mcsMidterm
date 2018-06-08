@@ -9,24 +9,51 @@
 import UIKit
 
 class MyListTableViewController: UITableViewController, ListTableViewCellDelegate {
+    
+    let products = ProductController.shared.products
+    var categories: [Category] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.fillCategoryArray()
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func fillCategoryArray() {
+        guard let firstProduct = products.first else { return }
+        var category = firstProduct.category
+        var productsArray: [Product] = []
+        
+        for index in 0..<self.products.count {
+            if products[index].category == category {
+                productsArray.append(products[index])
+            } else {
+                guard let newCategory = products[index].category else { return }
+                self.categories.append(newCategory)
+                category = self.products[index].category
+                productsArray.removeAll()
+                productsArray.append(products[index])
+            }
+        }
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return self.categories.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.categories[section].products?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
