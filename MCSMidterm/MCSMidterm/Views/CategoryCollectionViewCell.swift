@@ -26,6 +26,8 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         
         self.categoryImageView.image = image
         self.nameLabel.text = name
+        self.nameLabel.textColor = UIColor.white
+        self.nameLabel.backgroundColor = UIColor.darkGray
     }
     
 }

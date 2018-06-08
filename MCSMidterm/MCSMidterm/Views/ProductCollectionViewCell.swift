@@ -35,11 +35,13 @@ class ProductCollectionViewCell: UICollectionViewCell {
         
         self.productImageView.image = image
         self.nameLabel.text = name
+        self.nameLabel.backgroundColor = UIColor.darkGray
+        self.nameLabel.textColor = UIColor.white
         
         if product.isSelected {
-            self.isHighlighted = true
+            isSelectedButton.backgroundColor = UIColor.lightGray
         } else {
-            self.isHighlighted = false
+            isSelectedButton.backgroundColor = UIColor.clear
         }
     }
 }

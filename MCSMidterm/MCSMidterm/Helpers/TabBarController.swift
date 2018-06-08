@@ -43,23 +43,20 @@ class CustomTabBarController: UITabBarController {
         let listNav = storyBoard.instantiateViewController(withIdentifier: "MyList")
         let listNavController =  UINavigationController(rootViewController: listNav)
         listNav.title = "My List"
-        // list nav icon image, while selected and not selected
+        listNav.tabBarItem.image = #imageLiteral(resourceName: "list")
+        listNav.tabBarItem.selectedImage = #imageLiteral(resourceName: "selectedList")
         
         let itemsNav = storyBoard.instantiateViewController(withIdentifier: "Items")
         let itemsNavController = UINavigationController(rootViewController: itemsNav)
         itemsNav.title = "Items"
-        // items nav icon image, selected and not selected
+        itemsNav.tabBarItem.image = #imageLiteral(resourceName: "Cart")
+        itemsNav.tabBarItem.selectedImage = #imageLiteral(resourceName: "selectedCart")
         
         let favsNav = storyBoard.instantiateViewController(withIdentifier: "Favs")
         let favsNavController = UINavigationController(rootViewController: favsNav)
         favsNav.title = "Favorites"
-        // favs nav icon image, selected and not selected
-        
-        /*
-         searchNav.title = "Search"
-         searchNav.tabBarItem.image = #imageLiteral(resourceName: "searchIcon")
-         searchNav.tabBarItem.selectedImage = #imageLiteral(resourceName: "selectedSearch")
-         */
+        favsNav.tabBarItem.image = #imageLiteral(resourceName: "Star")
+        favsNav.tabBarItem.selectedImage = #imageLiteral(resourceName: "selectedStar")
         
         viewControllers = [listNavController, itemsNavController, favsNavController]
     }
