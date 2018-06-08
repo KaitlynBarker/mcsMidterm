@@ -10,10 +10,17 @@ import UIKit
 
 private let reuseIdentifier = "categoryProductCell"
 
-class ProductCollectionViewController: UICollectionViewController {
+class ProductCollectionViewController: UICollectionViewController, ProductCollectionViewCellDelegate {
+    
+    var category: Category?
+    var products: NSSet = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let productSet = self.category?.products else { return }
+        
+        self.products = productSet
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,40 +30,31 @@ class ProductCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return self.products.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ProductCollectionViewCell, let product = self.products.allObjects[indexPath.row] as? Product else { return UICollectionViewCell() }
     
-        // Configure the cell
+        cell.delegate = self
+        
+        cell.product = product
     
         return cell
     }
 
     // MARK: UICollectionViewDelegate
 
-    /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         return true
     }
-    */
 
-    /*
     // Uncomment this method to specify if the specified item should be selected
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         return true
     }
-    */
 
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
@@ -72,5 +70,15 @@ class ProductCollectionViewController: UICollectionViewController {
     
     }
     */
+    
+    // MARK: - ProductCollectionCellDelegate
+    
+    func productWasUpdated(cell: ProductCollectionViewCell) {
+        guard let indexPath = collectionView?.indexPath(for: cell) else { return }
+        guard let product = self.products.allObjects[indexPath.row] as? Product else { return }
+        
+        ProductController.shared.isSelectedToggle(product: product)
+        cell.updateViews()
+    }
 
 }
