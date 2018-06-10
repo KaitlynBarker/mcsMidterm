@@ -11,9 +11,10 @@ import UIKit
 import CoreData
 
 extension Category {
-    convenience init(name: String, image: UIImage, context: NSManagedObjectContext = CoreDataStack.context) {
+    convenience init(name: String, image: UIImage, id: Int32, context: NSManagedObjectContext = CoreDataStack.context) {
         self.init(context: context)
         self.name = name
         self.image = image
+        self.id = id
     }
 }

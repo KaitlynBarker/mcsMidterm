@@ -10,11 +10,14 @@ import UIKit
 
 class MyListTableViewController: UITableViewController, ListTableViewCellDelegate {
     
-    var products = ProductController.shared.selectedProducts
+    var products = NetworkManager.shared.selectedProducts
+//    var products: [Product] = []
     var categories: [Category] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "My List"
         
         self.fillCategoryArray()
         
@@ -24,7 +27,9 @@ class MyListTableViewController: UITableViewController, ListTableViewCellDelegat
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,11 +71,9 @@ class MyListTableViewController: UITableViewController, ListTableViewCellDelegat
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath) as? ListTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath) as? ListTableViewCell, let product = self.categories[indexPath.section].products?.allObjects[indexPath.row] as? Product else { return UITableViewCell() }
 
         cell.delegate = self
-        
-        let product = self.products[indexPath.row]
         
         cell.product = product
 
@@ -80,9 +83,8 @@ class MyListTableViewController: UITableViewController, ListTableViewCellDelegat
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let product = self.products[indexPath.row]
-            ProductController.shared.isSelectedToggle(product: product)
-            products.remove(at: indexPath.row)
+            guard let product = self.categories[indexPath.section].products?.allObjects[indexPath.row] as? Product else { return }
+            NetworkManager.shared.deleteProduct(product: product)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
@@ -91,9 +93,9 @@ class MyListTableViewController: UITableViewController, ListTableViewCellDelegat
     
     func listProductWasUpdated(cell: ListTableViewCell) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
-        let product = self.products[indexPath.row]
+        guard let product = self.categories[indexPath.section].products?.allObjects[indexPath.row] as? Product else { return }
         
-        ProductController.shared.isPurchasedToggle(product: product)
+        NetworkManager.shared.isPurchasedToggle(product: product)
         cell.updateViews()
     }
 }

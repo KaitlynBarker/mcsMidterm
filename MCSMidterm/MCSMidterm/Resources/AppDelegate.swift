@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let navBarAppearance = UINavigationBar.appearance()
         
-        navBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont.systemFont(ofSize: UIFont.smallSystemFontSize)]
+        navBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.systemFont(ofSize: UIFont.smallSystemFontSize)]
         navBarAppearance.backgroundColor = UIColor.limeGreen
         
         return true

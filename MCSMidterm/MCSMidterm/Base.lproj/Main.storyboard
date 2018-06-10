@@ -80,10 +80,7 @@
                             <outlet property="delegate" destination="hny-wi-xW1" id="X55-sK-M7o"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="jw0-Wi-nef">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="urV-Lb-8CY"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="33y-KW-ENp"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="jw0-Wi-nef"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3XD-iN-A03" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -165,10 +162,7 @@
                             <outlet property="delegate" destination="i5k-ks-ns2" id="2u2-qA-yiC"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="RxT-fe-QdX">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="C6c-yG-CFa"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bqe-mC-zjt"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="RxT-fe-QdX"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YBu-CK-2pY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -242,7 +236,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="8Lv-ds-7Fu">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wd7-Rf-O8m"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wd7-Rf-O8m">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="gxl-uv-bhS" id="VMR-eb-bIM"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="boL-G1-gnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -255,6 +253,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="2lq-tW-Ux5" customClass="CustomTabBarController" customModule="MCSMidterm" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uF9-El-Q0y">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -309,7 +308,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="imo-BU-uLn"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="f65-53-Vhy"/>
+                    <tabBarItem key="tabBarItem" id="f65-53-Vhy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lbd-oK-noR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

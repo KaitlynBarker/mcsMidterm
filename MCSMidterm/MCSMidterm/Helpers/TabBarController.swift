@@ -15,10 +15,8 @@ class CustomTabBarController: UITabBarController {
         
         self.customTabBar()
         
-        // - FIXME:- change names for selected and unselected states
-        
-        let arrayOfImageNameForSelectedState = ["selectedSearch", "selectedHeart", "selectedTask"]
-        let arrayOfImageNameForUnselectedState = ["searchIcon", "heartIcon", "task"]
+        let arrayOfImageNameForSelectedState = ["selectedList", "selectedCart", "selectedStar"]
+        let arrayOfImageNameForUnselectedState = ["list", "cart", "star"]
         
         if let count = self.tabBar.items?.count {
             for i in 0...(count-1) {
@@ -44,7 +42,7 @@ class CustomTabBarController: UITabBarController {
         let listNavController =  UINavigationController(rootViewController: listNav)
         listNav.title = "My List"
         listNav.tabBarItem.image = #imageLiteral(resourceName: "list")
-        listNav.tabBarItem.selectedImage = #imageLiteral(resourceName: "selectedList")
+        listNav.tabBarItem.selectedImage = #imageLiteral(resourceName: "selectedList") 
         
         let itemsNav = storyBoard.instantiateViewController(withIdentifier: "Items")
         let itemsNavController = UINavigationController(rootViewController: itemsNav)
