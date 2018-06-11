@@ -47,7 +47,7 @@ class CustomTabBarController: UITabBarController {
         let itemsNav = storyBoard.instantiateViewController(withIdentifier: "Items")
         let itemsNavController = UINavigationController(rootViewController: itemsNav)
         itemsNav.title = "Items"
-        itemsNav.tabBarItem.image = #imageLiteral(resourceName: "Cart")
+        itemsNav.tabBarItem.image = #imageLiteral(resourceName: "cart")
         itemsNav.tabBarItem.selectedImage = #imageLiteral(resourceName: "selectedCart")
         
         viewControllers = [listNavController, itemsNavController]

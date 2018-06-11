@@ -17,11 +17,15 @@ class MyListTableViewController: UITableViewController, ListTableViewCellDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        
+        self.tableView.refreshControl = refreshControl
+        
         self.title = "My List"
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         DispatchQueue.main.async {
             self.fillCategoryArray()
             self.tableView.reloadData()
@@ -31,6 +35,13 @@ class MyListTableViewController: UITableViewController, ListTableViewCellDelegat
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Refresh Func
+    
+    @objc func refresh() {
+        self.tableView.reloadData()
+        self.tableView.refreshControl?.endRefreshing()
     }
     
     func fillCategoryArray() {

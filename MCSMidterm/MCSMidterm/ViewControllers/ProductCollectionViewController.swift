@@ -34,20 +34,27 @@ class ProductCollectionViewController: UICollectionViewController, ProductCollec
         // retreive core data
         var currentSelectedProducts = NetworkManager.shared.selectedProducts
         // compare to selected items
-        guard let indexPaths = collectionView?.indexPathsForSelectedItems else { return }
+        //        guard let indexPaths = collectionView?.indexPathsForSelectedItems else { return }
         
         // filter out the already selected items from the selectedProducts array.
         
-        for indexPath in indexPaths {
-            let product = self.selectedProducts[indexPath.row]
-            if currentSelectedProducts.contains(product) {
-                selectedProducts.remove(at: indexPath.row)
-            } else {
-                currentSelectedProducts.append(product)
-                // save the new array of products that was returned.
-                NetworkManager.shared.save()
-            }
+        let filterResult = self.selectedProducts.filter { (product) -> Bool in
+            return !currentSelectedProducts.contains(product)
         }
+        
+        currentSelectedProducts.append(contentsOf: filterResult)
+        NetworkManager.shared.saveArray(array: currentSelectedProducts)
+        
+        
+        //        for indexPath in indexPaths {
+        //            let product = self.selectedProducts[indexPath.row]
+        //            if currentSelectedProducts.contains(product) {
+        //                selectedProducts.remove(at: indexPath.row)
+        //            } else {
+        //                currentSelectedProducts.append(product)
+        //                // save the new array of products that was returned.
+        //            }
+        //        }
         
         // show an alert that says that the data was saved.
         let alert = UIAlertController(title: "Products saved to list", message: "", preferredStyle: .alert)

@@ -49,6 +49,20 @@ class NetworkManager {
         self.save()
     }
     
+    func saveArray(array: [Product]) {
+        for object in array {
+            if object.isSelected == true {
+                guard let entity = NSEntityDescription.entity(forEntityName: "Product", in: CoreDataStack.context) else { return }
+                let product = NSManagedObject(entity: entity, insertInto: CoreDataStack.context)
+                product.setValue(object.name, forKeyPath: "name")
+                product.setValue(object.image, forKey: "image")
+                product.setValue(object.isPurchased, forKey: "isPurchased")
+                product.setValue(object.isSelected, forKey: "isSelected")
+            }
+        }
+        self.save()
+    }
+    
     func save() {
         let moc = CoreDataStack.context
         
