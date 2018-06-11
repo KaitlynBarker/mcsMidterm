@@ -39,7 +39,7 @@ class ProductCollectionViewController: UICollectionViewController, ProductCollec
         // filter out the already selected items from the selectedProducts array.
         
         for indexPath in indexPaths {
-            guard let product = self.products.allObjects[indexPath.row] as? Product else { return }
+            let product = self.selectedProducts[indexPath.row]
             if currentSelectedProducts.contains(product) {
                 selectedProducts.remove(at: indexPath.row)
             } else {

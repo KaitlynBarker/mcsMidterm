@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -260,7 +259,6 @@
                     <connections>
                         <segue destination="Ybo-9X-zcy" kind="relationship" relationship="viewControllers" id="gnm-66-Byx"/>
                         <segue destination="0ZJ-F4-owJ" kind="relationship" relationship="viewControllers" id="YpV-Qh-CUa"/>
-                        <segue destination="OmG-By-8yv" kind="relationship" relationship="viewControllers" id="c4Y-zN-Ihp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CG0-2l-Gh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -285,34 +283,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oRt-Jb-H3b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2014" y="681"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="gt4-nj-snL">
-            <objects>
-                <viewController storyboardIdentifier="Favs" id="OmG-By-8yv" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lgf-aF-JMd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites Not Available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjh-BR-Vcx">
-                                <rect key="frame" x="84.5" y="321.5" width="207" height="25.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="pjh-BR-Vcx" firstAttribute="centerX" secondItem="lgf-aF-JMd" secondAttribute="centerX" id="DQu-d3-rI9"/>
-                            <constraint firstItem="pjh-BR-Vcx" firstAttribute="centerY" secondItem="lgf-aF-JMd" secondAttribute="centerY" id="fzw-Bw-cnE"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="imo-BU-uLn"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" id="f65-53-Vhy"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lbd-oK-noR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1084" y="1383"/>
         </scene>
     </scenes>
     <resources>

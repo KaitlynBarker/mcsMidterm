@@ -38,10 +38,10 @@ class ProductCollectionViewCell: UICollectionViewCell {
         self.nameLabel.backgroundColor = UIColor.darkGray
         self.nameLabel.textColor = UIColor.white
         
-        if product.isSelected {
-            isSelectedButton.backgroundColor = UIColor.lightGray
+        if product.isSelected == true {
+            productImageView.image = #imageLiteral(resourceName: "complete")
         } else {
-            isSelectedButton.backgroundColor = UIColor.clear
+            productImageView.image = image
         }
     }
 }

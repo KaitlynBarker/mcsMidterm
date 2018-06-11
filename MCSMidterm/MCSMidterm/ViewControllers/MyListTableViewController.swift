@@ -18,16 +18,12 @@ class MyListTableViewController: UITableViewController, ListTableViewCellDelegat
         super.viewDidLoad()
         
         self.title = "My List"
-        
-        self.fillCategoryArray()
-        
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         DispatchQueue.main.async {
+            self.fillCategoryArray()
             self.tableView.reloadData()
         }
     }

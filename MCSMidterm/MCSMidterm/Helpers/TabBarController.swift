@@ -15,8 +15,8 @@ class CustomTabBarController: UITabBarController {
         
         self.customTabBar()
         
-        let arrayOfImageNameForSelectedState = ["selectedList", "selectedCart", "selectedStar"]
-        let arrayOfImageNameForUnselectedState = ["list", "cart", "star"]
+        let arrayOfImageNameForSelectedState = ["selectedList", "selectedCart"]
+        let arrayOfImageNameForUnselectedState = ["list", "cart"]
         
         if let count = self.tabBar.items?.count {
             for i in 0...(count-1) {
@@ -50,12 +50,6 @@ class CustomTabBarController: UITabBarController {
         itemsNav.tabBarItem.image = #imageLiteral(resourceName: "Cart")
         itemsNav.tabBarItem.selectedImage = #imageLiteral(resourceName: "selectedCart")
         
-        let favsNav = storyBoard.instantiateViewController(withIdentifier: "Favs")
-        let favsNavController = UINavigationController(rootViewController: favsNav)
-        favsNav.title = "Favorites"
-        favsNav.tabBarItem.image = #imageLiteral(resourceName: "Star")
-        favsNav.tabBarItem.selectedImage = #imageLiteral(resourceName: "selectedStar")
-        
-        viewControllers = [listNavController, itemsNavController, favsNavController]
+        viewControllers = [listNavController, itemsNavController]
     }
 }
