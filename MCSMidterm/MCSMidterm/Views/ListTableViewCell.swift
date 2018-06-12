@@ -24,14 +24,16 @@ class ListTableViewCell: UITableViewCell {
     
     weak var delegate: ListTableViewCellDelegate?
     
-    var product: Product? {
+    var product: ProductCD? {
         didSet {
             self.updateViews()
         }
     }
     
     func updateViews() {
-        guard let product = self.product, let image = product.image as? UIImage, let name = product.name else { return }
+        guard let product = self.product, let image = product.image as? UIImage else { return }
+        
+        let name = product.name
         
         self.productImageView.image = image
         self.nameLabel.text = name

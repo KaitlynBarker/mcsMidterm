@@ -13,7 +13,7 @@ private let reuseIdentifier = "categoryProductCell"
 class ProductCollectionViewController: UICollectionViewController, ProductCollectionViewCellDelegate {
     
     var category: Category?
-    var products: NSSet = []
+    var products: [Product] = []
     var selectedProducts: [Product] = []
     
     override func viewDidLoad() {
@@ -32,9 +32,8 @@ class ProductCollectionViewController: UICollectionViewController, ProductCollec
     
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
         // retreive core data
-        var currentSelectedProducts = NetworkManager.shared.selectedProducts
+        var currentSelectedProducts = NetworkManager.shared.products.map { Product(name: $0.name!, image: $0.image as? UIImage) }
         // compare to selected items
-        //        guard let indexPaths = collectionView?.indexPathsForSelectedItems else { return }
         
         // filter out the already selected items from the selectedProducts array.
         
@@ -44,17 +43,6 @@ class ProductCollectionViewController: UICollectionViewController, ProductCollec
         
         currentSelectedProducts.append(contentsOf: filterResult)
         NetworkManager.shared.saveArray(array: currentSelectedProducts)
-        
-        
-        //        for indexPath in indexPaths {
-        //            let product = self.selectedProducts[indexPath.row]
-        //            if currentSelectedProducts.contains(product) {
-        //                selectedProducts.remove(at: indexPath.row)
-        //            } else {
-        //                currentSelectedProducts.append(product)
-        //                // save the new array of products that was returned.
-        //            }
-        //        }
         
         // show an alert that says that the data was saved.
         let alert = UIAlertController(title: "Products saved to list", message: "", preferredStyle: .alert)
@@ -76,9 +64,11 @@ class ProductCollectionViewController: UICollectionViewController, ProductCollec
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ProductCollectionViewCell, let product = self.products.allObjects[indexPath.row] as? Product else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ProductCollectionViewCell else { return UICollectionViewCell() }
         
         cell.delegate = self
+        
+        let product = self.products[indexPath.row]
         
         cell.product = product
         
@@ -89,7 +79,7 @@ class ProductCollectionViewController: UICollectionViewController, ProductCollec
     
     func productWasUpdated(cell: ProductCollectionViewCell) {
         guard let indexPath = collectionView?.indexPath(for: cell) else { return }
-        guard let product = self.products.allObjects[indexPath.row] as? Product else { return }
+        let product = self.products[indexPath.row]
         
         if let index = selectedProducts.index(of: product) {
             selectedProducts.remove(at: index)

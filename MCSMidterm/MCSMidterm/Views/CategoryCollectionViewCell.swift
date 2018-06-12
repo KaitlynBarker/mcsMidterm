@@ -22,7 +22,9 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     }
     
     func updateViews() {
-        guard let category = self.category, let image = category.image as? UIImage, let name = category.name else { return }
+        guard let category = self.category, let image = category.image else { return }
+        
+        let name = category.name
         
         self.categoryImageView.image = image
         self.nameLabel.text = name
